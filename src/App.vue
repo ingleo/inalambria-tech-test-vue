@@ -44,7 +44,7 @@ export default {
           this.lista = response.data;
         })
         .catch(error => {
-          alert("Ha ocurrido un error consultado los articulos");
+          alert(error);
         });
     },
     /**
@@ -57,11 +57,11 @@ export default {
       }
       axios
         .post(this.uri, { nombre: this.articulo })
-        .then(response => {
+        .then(() => {
           this.obtenerArticulos();
         })
         .catch(error => {
-          alert("Ha ocurrido un error insertando el articulo");
+          alert(error);
         });
       this.articulo = "";
     }
