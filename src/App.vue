@@ -129,7 +129,7 @@ body {
 .lista-mercado-add:hover {
   box-shadow: none;
   margin-top: 21px;
-  margin-left: calc(auto + 1px);
+  margin-left: auto;
 }
 
 .lista-mercado-container {
