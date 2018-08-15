@@ -1,13 +1,13 @@
 <template>
   <div id="app">
-    <div class="lista_mercado">
+    <div class="lista-mercado">
       <img class="logo" :src="grocery" alt="Lista mercado"/>
-      <h1 class="lista_mercado-header">Lista del mercado</h1>
-      <div class="lista_mercado-container">
-        <Articulo v-for="articulo in lista" :articulo=articulo @borrar=obtenerArticulos :key="articulo.id" />
+      <h1 class="lista-mercado-header">Lista del mercado</h1>
+      <div class="lista-mercado-container">
+        <Articulo v-for="articulo in lista" :articulo=articulo @refrescar=obtenerArticulos :key="articulo.id" />
       </div>
       <input type="text" v-model="articulo" v-on:keyup.enter="crearNuevoArticulo"/>
-      <div class="lista_mercado-add" @click="crearNuevoArticulo()">+</div>
+      <div class="lista-mercado-add" @click="crearNuevoArticulo()">+</div>
     </div>
   </div>
 </template>
@@ -34,6 +34,9 @@ export default {
     this.obtenerArticulos();
   },
   methods: {
+    /**
+     * Obtiene los articulos de la lista
+     */
     obtenerArticulos() {
       axios
         .get(this.uri)
@@ -44,6 +47,9 @@ export default {
           alert("Ha ocurrido un error consultado los articulos");
         });
     },
+    /**
+     * Crea un nuevo articulo en la lista
+     */
     crearNuevoArticulo() {
       if (!this.articulo) {
         alert("Inserta un articulo");
@@ -69,7 +75,7 @@ body {
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica,
     Arial, sans-serif;
-  background: linear-gradient(#aeffae, #3d99ff);
+  background: linear-gradient(#159957, #155799);
   height: auto;
   min-height: 100vh;
   display: flex;
@@ -84,7 +90,7 @@ body {
   margin-bottom: 15px
 }
 
-.lista_mercado {
+.lista-mercado {
   text-align: center;
   border: 1px solid white;
   width: 80vw;
@@ -95,7 +101,7 @@ body {
   margin: 40px auto;
 }
 
-.lista_mercado-header {
+.lista-mercado-header {
   color: black;
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica,
     Arial, sans-serif;
@@ -104,7 +110,7 @@ body {
   margin: 70px auto 30px;
 }
 
-.lista_mercado-add {
+.lista-mercado-add {
   color: white;
   font-size: 2em;
   width: 0.5em;
@@ -120,13 +126,13 @@ body {
   margin: 20px auto 0;
 }
 
-.lista_mercado-add:hover {
+.lista-mercado-add:hover {
   box-shadow: none;
   margin-top: 21px;
   margin-left: calc(auto + 1px);
 }
 
-.lista_mercado-container {
+.lista-mercado-container {
   width: 80%;
   margin: 0 auto;
 }
