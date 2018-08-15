@@ -1,3 +1,3 @@
-### Prueba técnica para Inalambria
+## Prueba técnica para inalambria
 
-## Front - VueJs
+### Proyecto front VueJs

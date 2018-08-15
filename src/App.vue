@@ -27,7 +27,7 @@ export default {
       lista: [],
       articulo: "",
       grocery: Logo,
-      uri: "http://localhost:3000/api/v1/articulos"
+      uri: "https://inalambria-tech-test.herokuapp.com/api/v1/articulos"
     };
   },
   created: function() {
