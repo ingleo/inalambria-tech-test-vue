@@ -44,7 +44,7 @@ export default {
           this.lista = response.data;
         })
         .catch(error => {
-          alert("Ha ocurrido un error consultado los articulos");
+          alert(error);
         });
     },
     /**
@@ -57,11 +57,11 @@ export default {
       }
       axios
         .post(this.uri, { nombre: this.articulo })
-        .then(response => {
+        .then(() => {
           this.obtenerArticulos();
         })
         .catch(error => {
-          alert("Ha ocurrido un error insertando el articulo");
+          alert(error);
         });
       this.articulo = "";
     }
@@ -129,7 +129,7 @@ body {
 .lista-mercado-add:hover {
   box-shadow: none;
   margin-top: 21px;
-  margin-left: calc(auto + 1px);
+  margin-left: auto;
 }
 
 .lista-mercado-container {
