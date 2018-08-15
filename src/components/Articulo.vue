@@ -20,7 +20,7 @@ export default {
   props: ["articulo"],
   data() {
     return {
-      uri: "http://localhost:3000/api/v1/articulos/"
+      uri: "https://inalambria-tech-test.herokuapp.com/api/v1/articulos/"
     };
   },
   methods: {
@@ -35,7 +35,7 @@ export default {
           this.$emit("refrescar", response);
         })
         .catch(error => {
-          alert("Ha ocurrido un error borrando el articulo");
+          alert(error);
         });
     },
     /**
@@ -53,7 +53,7 @@ export default {
           this.$emit("refrescar", response);
         })
         .catch(error => {
-          alert("Ha ocurrido un error actualizando el articulo");
+          alert(error);
         });
     }
   }
